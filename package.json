@@ -1,0 +1,50 @@
+{
+  "name": "graphql-document-type",
+  "version": "0.0.0",
+  "description": "Provides a mechanism to bring persisted documents/queries to express-graphql",
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/williambailey/graphql-document-type.git"
+  },
+  "main": "./dist/index.js",
+  "directories": {
+    "lib": "./dist"
+  },
+  "types": "./dist/index.d.ts",
+  "engines": {
+    "node": ">= 10.x"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist tsconfig.tsbuildinfo",
+    "build": "npm run lint && npm run tsc && npm run test",
+    "lint": "eslint ./src --ext .ts --max-warnings 0",
+    "prepublishOnly": "./resources/prepublish.sh",
+    "test": "ava",
+    "tsc": "tsc"
+  },
+  "keywords": [
+    "document",
+    "graphql",
+    "type"
+  ],
+  "devDependencies": {
+    "@types/graphql": "^14.2.0",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
+    "ava": "^1.4.1",
+    "eslint": "^5.16.0",
+    "graphql": "^14.2.0",
+    "typescript": "^3.4.5"
+  },
+  "peerDependencies": {
+    "graphql": "^14.2.0"
+  },
+  "typings": "src"
+}
